@@ -1,11 +1,11 @@
 import { Contact } from './types';
 
-export const AI_CONTACT_ID = 'ai-ghost-bot';
+export const AI_CONTACT_ID = 'system-root-ai';
 
 export const AI_CONTACT: Contact = {
   id: AI_CONTACT_ID,
-  publicKey: 'AI_Simulated_Key',
-  name: 'GhostBot (AI)',
+  publicKey: 'SYSTEM_ROOT_KEY_V1',
+  name: 'SYSTEM_ROOT',
   isAi: true,
-  avatarSeed: 'ghostbot-1'
+  avatarSeed: 'root-access'
 };

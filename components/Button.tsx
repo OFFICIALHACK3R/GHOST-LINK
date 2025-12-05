@@ -14,19 +14,20 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-ghost-900 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center font-mono uppercase tracking-wider transition-all focus:outline-none focus:ring-1 focus:ring-hacker-500 disabled:opacity-50 disabled:cursor-not-allowed border border-transparent";
   
+  // Hacker/Terminal Variants
   const variants = {
-    primary: "bg-ghost-500 hover:bg-ghost-400 text-ghost-900 focus:ring-ghost-500",
-    secondary: "bg-ghost-800 hover:bg-ghost-700 text-ghost-100 border border-ghost-700 focus:ring-ghost-700",
-    danger: "bg-red-600 hover:bg-red-500 text-white focus:ring-red-600",
-    ghost: "bg-transparent hover:bg-ghost-800 text-ghost-400 hover:text-ghost-100",
+    primary: "bg-hacker-500 text-hacker-950 hover:bg-hacker-400 border-hacker-500 font-bold",
+    secondary: "bg-transparent text-hacker-500 border-hacker-500 hover:bg-hacker-500 hover:text-hacker-950",
+    danger: "bg-transparent text-hacker-err border-hacker-err hover:bg-hacker-err hover:text-black",
+    ghost: "text-hacker-500 hover:bg-hacker-800 hover:text-hacker-400",
   };
 
   const sizes = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
+    sm: "px-2 py-1 text-xs border",
+    md: "px-4 py-2 text-sm border",
+    lg: "px-8 py-3 text-base border-2",
   };
 
   return (

@@ -3,24 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GhostLink | Anonymous Chat</title>
+    <title>ZER0_TRACE // TERMINAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              ghost: {
-                900: '#0f172a', // Background
-                800: '#1e293b', // Surface
-                700: '#334155', // Border
-                500: '#10b981', // Primary/Accent (Emerald)
-                400: '#34d399', // Hover
-                100: '#e2e8f0', // Text
+              // Hacker Theme Palette (Green/Black)
+              hacker: {
+                950: '#000000', // Deep Void
+                900: '#050505', // Background
+                800: '#0a0a0a', // Surface
+                700: '#112211', // Dark Green Surface
+                600: '#003300', // Border Dim
+                500: '#00ff41', // Terminal Green (Primary)
+                400: '#33ff66', // Bright Green
+                100: '#ccffcc', // Text Light
+                err: '#ff0000', // Error Red
               }
             },
             fontFamily: {
-              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+              mono: ['"Courier New"', 'Courier', 'monospace'],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glitch': 'glitch 1s linear infinite',
+            },
+            keyframes: {
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              }
             }
           }
         }
@@ -28,22 +43,50 @@
     </script>
     <style>
       body {
-        background-color: #0f172a;
-        color: #e2e8f0;
+        background-color: #000000;
+        color: #00ff41;
+        font-family: 'Courier New', Courier, monospace;
+        overflow: hidden; /* Prevent native scroll, handle in app */
       }
-      /* Custom scrollbar for dark theme */
+      
+      /* CRT Scanline Effect */
+      body::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 50;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+
+      /* Custom scrollbar for hacker theme */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b; 
+        background: #000000; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 4px;
+        background: #003300; 
+        border: 1px solid #00ff41;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569; 
+        background: #00ff41; 
+      }
+      
+      /* Selection Color */
+      ::selection {
+        background: #00ff41;
+        color: #000000;
+      }
+      
+      input, button {
+        font-family: 'Courier New', Courier, monospace;
       }
     </style>
   <script type="importmap">
