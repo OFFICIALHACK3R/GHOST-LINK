@@ -1,0 +1,5 @@
+{
+  "name": "GhostLink",
+  "description": "A privacy-first, anonymous chat platform using cryptographic identities and rotating linking codes. Features zero-knowledge architecture and end-to-end encryption principles.",
+  "requestFramePermissions": []
+}
